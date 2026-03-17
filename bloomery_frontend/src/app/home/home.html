@@ -14,7 +14,13 @@
 </menu>
 
 <div class="banner">
-
+    
+    @for (item of banners; track $index) {
+        <a href="{{ item.url }}" target="_blank">
+            <img [src]="item.imageUrl" alt="Banner {{ $index }}" class="banner-image">
+        </a>
+    }
+    
 </div>
 
 <div class="categorias">
