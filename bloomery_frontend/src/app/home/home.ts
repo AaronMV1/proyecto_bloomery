@@ -1,44 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  imports: [],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrls: ['./home.css'],
 })
-export class Home implements OnInit {
+export class Home implements OnInit, OnDestroy {
 
   banners = [
     {
-      imageUrl: 'https://ethic.es/wp-content/uploads/2023/03/imagen-640x384.jpg',
-      url: 'https://ethic.es/wp-content/uploads/2023/03/imagen-640x384.jpg'
+      imageUrl: 'https://fastly.picsum.photos/id/575/800/300.jpg?hmac=2IIWYe2mglnPKHLg-vswlhaELUJCxABhbGUWqM0wzRU',
+      url: 'https://google.com'
     },
     {
-      imageUrl: 'https://ethic.es/wp-content/uploads/2023/03/imagen-640x384.jpg',
-      url: 'https://ethic.es/wp-content/uploads/2023/03/imagen-640x384.jpg'
+      imageUrl: 'https://fastly.picsum.photos/id/100/800/300.jpg?hmac=K7M342X8Y9Z0A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6',
+      url: 'https://youtube.com'
     },
     {
-      imageUrl: 'https://ethic.es/wp-content/uploads/2023/03/imagen-640x384.jpg',
-      url: 'https://ethic.es/wp-content/uploads/2023/03/imagen-640x384.jpg'
+      imageUrl: 'https://fastly.picsum.photos/id/100/800/300.jpg?hmac=K7M342X8Y9Z0A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6',
+      url: 'https://facebook.com'
     }
   ];
 
   currentIndex = 0;
-
-  // Tiempo configurable en milisegundos (por defecto 3 segundos)
-  bannerInterval: number = 3000;
+  bannerInterval = 3000;
+  intervalId: any;
 
   ngOnInit() {
-    setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.banners.length;
+    this.intervalId = setInterval(() => {
+      this.nextBanner();
     }, this.bannerInterval);
   }
 
-  get currentImage() {
-    return this.banners[this.currentIndex].imageUrl;
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
   }
 
-  get currentUrl() {
-    return this.banners[this.currentIndex].url;
+  nextBanner() {
+    this.currentIndex = (this.currentIndex + 1) % this.banners.length;
   }
 }

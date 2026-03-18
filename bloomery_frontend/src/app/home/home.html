@@ -14,13 +14,19 @@
 </menu>
 
 <div class="banner">
-    
-    @for (item of banners; track $index) {
-        <a href="{{ item.url }}" target="_blank">
-            <img [src]="item.imageUrl" alt="Banner {{ $index }}" class="banner-image">
-        </a>
-    }
-    
+  <div 
+    class="banner-track" 
+    [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+  >
+    <a 
+      *ngFor="let banner of banners" 
+      [href]="banner.url" 
+      target="_blank"
+      class="banner-item"
+    >
+      <img [src]="banner.imageUrl" class="banner-image" />
+    </a>
+  </div>
 </div>
 
 <div class="categorias">
