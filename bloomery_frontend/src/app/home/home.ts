@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })
@@ -30,7 +31,7 @@ export class Home implements OnInit, OnDestroy {
 
   // ─── Estado interno ──────────────────────────────────────────────────────────
 
-  currentIndex = 0;
+  currentIndex = signal(0);
   private intervalId: ReturnType<typeof setInterval> | null = null;
 
   ngOnInit(): void {
@@ -42,18 +43,18 @@ export class Home implements OnInit, OnDestroy {
   }
 
   next(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.banners.length;
+    this.currentIndex.update(i => (i + 1) % this.banners.length);
     this.resetAuto();
   }
 
   prev(): void {
-    this.currentIndex = (this.currentIndex - 1 + this.banners.length) % this.banners.length;
+    this.currentIndex.update(i => (i - 1 + this.banners.length) % this.banners.length);
     this.resetAuto();
   }
 
   private startAuto(): void {
     this.intervalId = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.banners.length;
+      this.currentIndex.update(i => (i + 1) % this.banners.length);
     }, this.autoPlayInterval);
   }
 

@@ -15,7 +15,7 @@
 
 <div class="banner">
 
-    <div class="slider-track" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+    <div class="slider-track" [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'">
         @for (item of banners; track $index) {
             <div class="slide">
                 <a [href]="item.url" target="_blank">
@@ -30,7 +30,7 @@
 
     <div class="dots">
         @for (item of banners; track $index; let i = $index) {
-            <span class="dot" [class.active]="i === currentIndex" (click)="currentIndex = i"></span>
+            <span class="dot" [class.active]="i === currentIndex()" (click)="currentIndex.set(i)"></span>
         }
     </div>
 
