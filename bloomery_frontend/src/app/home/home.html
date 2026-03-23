@@ -14,19 +14,26 @@
 </menu>
 
 <div class="banner">
-  <div 
-    class="banner-track" 
-    [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
-  >
-    <a 
-      *ngFor="let banner of banners" 
-      [href]="banner.url" 
-      target="_blank"
-      class="banner-item"
-    >
-      <img [src]="banner.imageUrl" class="banner-image" />
-    </a>
-  </div>
+
+    <div class="slider-track" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+        @for (item of banners; track $index) {
+            <div class="slide">
+                <a [href]="item.url" target="_blank">
+                    <img [src]="item.imageUrl" alt="banner" />
+                </a>
+            </div>
+        }
+    </div>
+
+    <button class="btn prev" (click)="prev()">&#10094;</button>
+    <button class="btn next" (click)="next()">&#10095;</button>
+
+    <div class="dots">
+        @for (item of banners; track $index; let i = $index) {
+            <span class="dot" [class.active]="i === currentIndex" (click)="currentIndex = i"></span>
+        }
+    </div>
+
 </div>
 
 <div class="categorias">
@@ -58,5 +65,5 @@
 </div>
 
 <div class="container">
-    
+
 </div>

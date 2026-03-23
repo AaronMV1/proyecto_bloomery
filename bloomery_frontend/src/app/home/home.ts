@@ -7,36 +7,65 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class Home implements OnInit, OnDestroy {
 
+  // ─── Configuración del banner ───────────────────────────────────────────────
+
+  /** Tiempo en millisegundos que permanece cada slide antes de avanzar */
+  autoPlayInterval = 4000;
+
+  /** Cada objeto tiene la URL de la imagen y la URL a donde redirige al hacer clic */
   banners = [
     {
-      imageUrl: 'https://fastly.picsum.photos/id/575/800/300.jpg?hmac=2IIWYe2mglnPKHLg-vswlhaELUJCxABhbGUWqM0wzRU',
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5H6hOmnz3I9pKF7YtneBZjhsZ6UnT98Icmg&s',
       url: 'https://google.com'
     },
     {
-      imageUrl: 'https://fastly.picsum.photos/id/100/800/300.jpg?hmac=K7M342X8Y9Z0A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6',
+      imageUrl: 'https://static.vecteezy.com/system/resources/previews/000/701/690/non_2x/abstract-polygonal-banner-background-vector.jpg',
       url: 'https://youtube.com'
     },
     {
-      imageUrl: 'https://fastly.picsum.photos/id/100/800/300.jpg?hmac=K7M342X8Y9Z0A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6',
+      imageUrl: 'https://png.pngtree.com/thumb_back/fh260/background/20241213/pngtree-blue-and-white-business-banner-background-vector-image_16792366.jpg',
       url: 'https://facebook.com'
     }
   ];
 
+  // ─── Estado interno ──────────────────────────────────────────────────────────
+
   currentIndex = 0;
-  bannerInterval = 3000;
-  intervalId: any;
+  private intervalId: ReturnType<typeof setInterval> | null = null;
 
-  ngOnInit() {
-    this.intervalId = setInterval(() => {
-      this.nextBanner();
-    }, this.bannerInterval);
+  ngOnInit(): void {
+    this.startAuto();
   }
 
-  ngOnDestroy() {
-    clearInterval(this.intervalId);
+  ngOnDestroy(): void {
+    this.stopAuto();
   }
 
-  nextBanner() {
+  next(): void {
     this.currentIndex = (this.currentIndex + 1) % this.banners.length;
+    this.resetAuto();
+  }
+
+  prev(): void {
+    this.currentIndex = (this.currentIndex - 1 + this.banners.length) % this.banners.length;
+    this.resetAuto();
+  }
+
+  private startAuto(): void {
+    this.intervalId = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.banners.length;
+    }, this.autoPlayInterval);
+  }
+
+  private stopAuto(): void {
+    if (this.intervalId !== null) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+  }
+
+  private resetAuto(): void {
+    this.stopAuto();
+    this.startAuto();
   }
 }
