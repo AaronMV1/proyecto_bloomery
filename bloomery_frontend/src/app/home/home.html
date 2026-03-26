@@ -1,5 +1,5 @@
 <header>
-    <h1>Bloomery Flower</h1>
+    <h1>Website</h1>
 </header>
 
 
@@ -46,29 +46,13 @@
 
     <div class="">
 
-        <div class="categoria">
-            <div class="portada"></div>
-            <h3>Plantas de Interiores</h3>
-            <p>Ver categoría</p>
-        </div>
-
-        <div class="categoria">
-            <div class="portada"></div>
-            <h3>Plantas de Exteriores</h3>
-            <p>Ver categoría</p>
-        </div>
-
-        <div class="categoria">
-            <div class="portada"></div>
-            <h3>Decoración y Macetas</h3>
-            <p>Ver categoría</p>
-        </div>
-
-        <div class="categoria">
-            <div class="portada"></div>
-            <h3>Arreglos Funebres</h3>
-            <p>Ver categoría</p>
-        </div>
+        @for (item of categorias; track $index; let i = $index) {
+            <div class="categoria">
+                <div class="portada"></div>
+                <h3>{{item.name}}</h3>
+                <p>Ver categoría</p>
+            </div>
+        }
 
     </div>
 
