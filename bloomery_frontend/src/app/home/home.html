@@ -47,8 +47,8 @@
     <div class="">
 
         @for (item of categorias; track $index; let i = $index) {
-            <div class="categoria">
-                <div class="portada"></div>
+            <div class="categoria" [class.active]="i === selectedCategoriaIndex()" (click)="onCategoriaClick(i)">
+                <div class="portada" [style.background-image]="'url(' + item.imageUrl + ')'"> </div>
                 <h3>{{item.name}}</h3>
                 <p>Ver categoría</p>
             </div>
@@ -59,6 +59,18 @@
 </div>
 
 
-<div class="container">
+<div class="container" id="interiores" #interioresContainer>
+
+    <h3>{{ selectedCategoria().name }}</h3>
+
+    <div class="interiores-grid">
+        @for (interior of selectedCategoria().interiores; track $index) {
+            <article class="interior-card">
+                <img [src]="interior.imageUrl" [alt]="interior.name" />
+                <h4>{{ interior.name }}</h4>
+                <p>{{ interior.price }}</p>
+            </article>
+        }
+    </div>
 
 </div>
