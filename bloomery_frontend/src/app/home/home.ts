@@ -28,7 +28,7 @@ interface Categoria {
 export class Home implements OnInit, OnDestroy {
 
 
-    autoPlayInterval = 2000;
+    autoPlayInterval = 10000;
 
 
     banners = [
@@ -59,12 +59,12 @@ export class Home implements OnInit, OnDestroy {
                 },
                 {
                     name: 'Sansevieria',
-                    imageUrl: 'https://images.unsplash.com/photo-1593482892290-f54927ae9f3d?w=1200&auto=format&fit=crop&q=80',
+                    imageUrl: 'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=1200&auto=format&fit=crop&q=80',
                     price: '$18.50'
                 },
                 {
                     name: 'Pothos N-Joy',
-                    imageUrl: 'https://images.unsplash.com/photo-1593691509543-c55fb32e5b14?w=1200&auto=format&fit=crop&q=80',
+                    imageUrl: 'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=1200&auto=format&fit=crop&q=80',
                     price: '$14.00'
                 }
             ]
