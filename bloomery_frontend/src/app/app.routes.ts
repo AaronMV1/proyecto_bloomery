@@ -1,9 +1,27 @@
+
+
 import { Routes } from '@angular/router';
-import { Home } from './home/home';
+
+
+import { ContentPublic } from './layout/content-public/content-public';
+import { Inicio } from './modules/pages/inicio/inicio';
+
 
 export const routes: Routes = [
+
     {
-        path: 'home',
-        component: Home
-    }
+        path: '',
+        component: ContentPublic,
+        children: [
+            {
+                path: 'inicio',
+                component: Inicio
+            }
+        ]
+    },
+    {
+        path: '**',
+        redirectTo: 'inicio'
+    },
+
 ];

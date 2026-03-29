@@ -1,0 +1,144 @@
+<div class="banner">
+
+    <div class="slider-track" [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'">
+        @for (item of banners; track $index) {
+        <div class="slide">
+            <a [href]="item.url" target="_blank">
+                <img [src]="item.imageUrl" alt="banner" />
+            </a>
+        </div>
+        }
+    </div>
+
+    <button class="btn prev" (click)="prev()">&#10094;</button>
+    <button class="btn next" (click)="next()">&#10095;</button>
+
+    <div class="dots">
+        @for (item of banners; track $index; let i = $index) {
+        <span class="dot" [class.active]="i === currentIndex()" (click)="currentIndex.set(i)"></span>
+        }
+    </div>
+
+</div>
+
+
+<div class="categorias">
+
+    <div class="bloque-titulo">
+        <h3>Categorías</h3>
+    </div>
+
+    <div class="">
+
+        @for (item of categorias; track $index; let i = $index) {
+
+        <div class="categoria" [class.active]="i === selectedCategoriaIndex()" (click)="onCategoriaClick(i)">
+            <div class="portada" [style.background-image]="'url(' + item.imageUrl + ')'"> </div>
+            <h3>{{item.name}}</h3>
+        </div>
+
+        }
+
+        <!-- @for (item of categorias; track $index; let i = $index) {
+            <div class="categoria" [class.active]="i === selectedCategoriaIndex()" (click)="onCategoriaClick(i)">
+                <div class="portada" [style.background-image]="'url(' + item.imageUrl + ')'"> </div>
+                <h3>{{item.name}}</h3>
+                <p>Ver categoría</p>
+            </div>
+        } -->
+
+    </div>
+
+</div>
+
+
+<div class="container" id="productos" #productosContainer>
+
+    <!-- <p>&nbsp;</p> -->
+    <p>&#8203;</p>
+
+    <div class="bloque-titulo">
+        <h3>{{ selectedCategoria().name }}</h3>
+        <p>{{ selectedCategoria().description }}</p>
+    </div>
+
+
+    <div class="productos-grid">
+
+        @for (producto of selectedCategoria().productos; track $index) {
+
+        <article class="producto-card">
+
+            <div class="producto-imagen">
+
+                @if (producto.discount && precio) {
+
+                <div class="producto-descuento">
+                    <span>-{{ producto.discount }}%</span>
+                </div>
+
+                }
+
+                <img [src]="producto.imageUrl" [alt]="producto.name" />
+
+            </div>
+
+            <div class="producto-card-separador"></div>
+
+            <div class="producto-detalle">
+
+                <h4>{{ producto.name }}</h4>
+
+                @if (producto.wateringLevel) {
+
+                <div class="producto-riego">
+
+                    @for (item of [].constructor(producto.wateringLevel); track $index) {
+                    <span class="gota"></span>
+                    <!-- <span class="gota">💧</span> -->
+                    }
+
+                </div>
+
+                }
+
+                @if (precio) {
+
+                <div class="producto-precio">
+
+                    @if (producto.discount) {
+
+                    <p>S/ {{ producto.price - (producto.price * producto.discount / 100) | number:'1.2-2' }}</p>
+                    <p class="producto-precio-original">S/ {{ producto.price | number:'1.2-2' }}</p>
+
+                    } @else {
+
+                    <p>S/ {{ producto.price | number: '1.2-2' }}</p>
+
+                    }
+
+                </div>
+
+                }
+
+                <div class="producto-botones">
+
+                    <a class="producto-boton producto-consultar">
+                        <p>Consultar</p>
+                    </a>
+
+                    <div class="producto-boton producto-detalles">
+                        <p>Detalles</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        }
+
+    </div>
+
+</div>

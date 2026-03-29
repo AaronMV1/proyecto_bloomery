@@ -1,0 +1,13 @@
+
+.routes {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+@media (max-width: 768px) {
+    .routes {
+        padding-top: 3rem;
+    }
+}

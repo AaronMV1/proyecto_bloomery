@@ -1,58 +1,27 @@
-header {
-    background-color: white;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 1.2rem 1.5rem;
-}
 
-header h1 {
-    color: rgb(0, 99, 5);
-    font-size: 20px;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.mini-header {
-    background-color: rgb(0, 99, 5);
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0.3rem 1.5rem;
-    color: white;
-    font-size: .7rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-menu {
+.bloque-titulo {
+    
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    text-align: center;
+    margin: 2rem 0;
+
+    h3 {
+        font-size: 2.5rem !important;
+        text-transform: uppercase;
+        color: rgb(0, 99, 5);
+    }
+
+    p {
+        font-size: 1.8rem !important;
+        color: rgb(0, 99, 5);
+    }
+
 }
-
-menu a {
-    text-decoration: none;
-    color: rgb(0, 99, 5);
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-menu a:hover {
-    color: rgb(0, 150, 10);
-    cursor: pointer;
-}
-
-
-
-
 
 
 .categorias {
@@ -65,10 +34,8 @@ menu a:hover {
 }
 
 .categorias h3 {
-    font-size: 1.5rem;
     text-transform: uppercase;
     color: rgb(0, 99, 5);
-    font-family: Arial, Helvetica, sans-serif;
     margin: 2rem 0;
 }
 
@@ -81,18 +48,19 @@ menu a:hover {
 }
 
 .categoria {
+
+    /* height: 220px; */
     width: 220px;
-    height: 220px;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 
     &:hover {
         transform: translateY(-4px);
@@ -109,13 +77,18 @@ menu a:hover {
         height: 150px;
         background-size: cover;
         background-position: center;
-        background-color: rgb(0, 99, 5);
+        /* background-color: rgb(0, 99, 5); */
     }
 
     h3 {
-        font-size: .8rem;
+        position: absolute;
+        top: calc(50% - 2.5rem);
+        right: 15px;
+        width: 50%;
+        line-height: 2rem;
+        font-size: 1.5rem;
         text-transform: uppercase;
-        text-align: center;
+        text-align: right;
         margin: .6rem 0;
     }
 
@@ -137,55 +110,155 @@ menu a:hover {
 }
 
 
-#interiores {
+#productos {
     width: min(1120px, 92%);
-    margin: 2rem auto 4rem auto;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0rem auto 4rem auto;
 }
 
-#interiores h3 {
+#productos h3 {
     font-size: 1.4rem;
     text-transform: uppercase;
     color: rgb(0, 99, 5);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-.interiores-grid {
+#productos p {
+    font-size: 0.9rem;
+    text-align: center;
+    color: rgb(0, 99, 5);
+    margin-bottom: 4rem;
+}
+
+.productos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+    gap: 4rem;
 }
 
-.interior-card {
+.producto-card {
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
     background-color: #fff;
 }
 
-.interior-card img {
+.producto-imagen {
     width: 100%;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    background-color: #faf2f2;
+    position: relative;
+    /* background-color: red; */
+}
+
+.producto-descuento {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgb(0, 211, 14) !important;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: .5rem;
+}
+
+.producto-card img {
+    width: 80%;
     height: 170px;
     object-fit: cover;
     display: block;
+    margin: 0 auto;
 }
 
-.interior-card h4 {
-    font-size: 0.95rem;
-    margin: 0.7rem 0.7rem 0.3rem 0.7rem;
+.producto-card-separador {
+    width: 100%;
+    /* height: 2px; */
+    background-color: #EEE;
 }
 
-.interior-card p {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: rgb(0, 99, 5);
-    margin: 0 0.7rem 0.9rem 0.7rem;
+.producto-detalle {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+
+    h4 {
+        text-align: center;
+        font-size: 1.5rem;
+        color: black
+    }
+
+    p {
+        color: rgb(0, 232, 15) !important;
+        font-size: 1.5rem !important;
+        font-weight: bold;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .producto-riego {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .gota {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(0, 157, 255);
+        border-radius: 50%;
+    }
+
+    .producto-precio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .producto-precio-original {
+        font-size: 1rem;
+        color: #888 !important;
+        text-decoration: line-through;
+    }
+
+}
+
+.producto-botones {
+
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    .producto-boton {
+        width: 6rem;
+        padding: 0.6rem 0rem;
+        border-radius: .5rem;
+        cursor: pointer;
+    }
+
+    .producto-consultar { background-color: rgb(0, 211, 14) !important; }
+    .producto-detalles  { background-color: rgb(167, 167, 167) !important; }
+
+    p {
+        font-size: 1rem !important;
+        color: white !important;
+    }
+
 }
 
 
+/*  #region Banner */
 
-
-/*  BANNER  */
 
 .banner {
     width: 100%;
@@ -193,6 +266,13 @@ menu a:hover {
     position: relative;
     overflow: hidden;
     background-color: #111;
+    border-radius: 3rem;
+}
+
+@media (max-width: 1220px) {
+    .banner {
+        border-radius: 0rem;
+    }
 }
 
 /* track que contiene todos los slides en fila */
@@ -288,7 +368,10 @@ menu a:hover {
     transform: scale(1.3);
 }
 
+
 /* Responsive */
+
+
 @media (max-width: 600px) {
     .btn {
         font-size: 1.1rem;
@@ -308,3 +391,6 @@ menu a:hover {
         height: 7px;
     }
 }
+
+
+/*  #endregion */

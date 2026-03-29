@@ -1,6 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1rem;
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+a, p, h1, h2, h3, h4, span {
+    margin: 0;
+    padding: 0;
+    font-family: 'Saturnia Regular';
+    letter-spacing: 1px;
+}
+
+
+@font-face {
+    font-family: 'Saturnia Light';
+    src: url('/fonts/lpsaturniasans_light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saturnia Regular';
+    src: url('/fonts/lpsaturniasans_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*
+body {
+    font-family: 'Saturnia', sans-serif !important;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 99, 5);
+}
+*/
