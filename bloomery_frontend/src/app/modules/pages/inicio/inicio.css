@@ -477,12 +477,12 @@
 }
 
 
-.btn-regresar {
+.boton-flotante {
     height: 5rem;
     width: 5rem;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    bottom: 5rem;
+    bottom: 11rem;
     right: 5rem;
     display: flex;
     flex-direction: column;
@@ -495,32 +495,36 @@
     cursor: pointer;
 }
 
-@media (max-width: 900px) {
-    .btn-modo-noche {
-        right: 2rem;
-    }
+.boton-flotante_modo-noche {
+    bottom: 5rem;
+}
 
-    .btn-regresar {
+.boton-flotante_regresar {
+    bottom: 11rem;
+}
+
+@media (max-width: 900px) {
+    .boton-flotante {
         right: 2rem;
     }
 }
 
 @media (max-width: 600px) {
-    .btn-modo-noche {
-        bottom: 9.5rem;
-        width: 4.5rem;
-        height: 4.5rem;
-    }
 
-    .btn-modo-noche .tabler-icon {
+    .boton-flotante .tabler-icon {
         --ng-icon__size: 2rem;
     }
 
-    .btn-regresar {
-        bottom: 3.8rem;
+    .boton-flotante_modo-noche {
+        bottom: 3.8rem !important;
         width: 4.5rem;
         height: 4.5rem;
-        font-size: 1.8rem;
+    }
+
+    .boton-flotante_regresar {
+        bottom: 9.5rem !important;
+        width: 4.5rem;
+        height: 4.5rem;
     }
 }
 
@@ -698,8 +702,7 @@
     border-color: rgba(151, 206, 126, 0.2);
 }
 
-:host-context(body.dark-mode) .btn-modo-noche,
-:host-context(body.dark-mode) .btn-regresar {
+:host-context(body.dark-mode) .boton-flotante {
     background-color: rgba(9, 9, 9, 0.85);
 }
 
