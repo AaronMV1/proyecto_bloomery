@@ -12,9 +12,23 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-template-rows: 1fr;
     grid-column-gap: 8rem;
+}
+
+@media (max-width: 1000px) {
+
+  .footer-grid {
+    padding: 0 10rem;
+    text-align: center;
+    grid-row-gap: 2rem;
+  }
+
+  .footer-grid a,
+  .footer-grid img {
+    margin: 0 auto;
+  }
 }
 
 .footer-grid {
@@ -57,7 +71,7 @@ footer {
         width: 20rem;
         height: auto;
         filter: saturate(0);
-    }    
+    }
 
 }
 

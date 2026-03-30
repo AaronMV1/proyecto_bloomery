@@ -1,43 +1,43 @@
 {
-  "hash": "5649e4df",
-  "configHash": "ec300f11",
+  "hash": "d72de028",
+  "configHash": "c9ed3d21",
   "lockfileHash": "f969db15",
-  "browserHash": "56f8e445",
+  "browserHash": "5279b643",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "e9612db3",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "01d66a05",
+      "fileHash": "e7d12eb1",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "80de06b5",
+      "fileHash": "07bd4871",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "e8643f85",
-      "needsInterop": false
-    },
-    "@angular/common": {
-      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
-      "file": "@angular_common.js",
-      "fileHash": "26ecf994",
+      "fileHash": "3ca2524c",
       "needsInterop": false
     },
     "@ng-icons/core": {
-      "src": "../../../../../../../node_modules/@ng-icons/core/fesm2022/ng-icons-core.mjs",
+      "src": "../../../../../../node_modules/@ng-icons/core/fesm2022/ng-icons-core.mjs",
       "file": "@ng-icons_core.js",
-      "fileHash": "8c503427",
+      "fileHash": "c52696f7",
       "needsInterop": false
     },
     "@ng-icons/tabler-icons": {
       "src": "../../../../../../node_modules/@ng-icons/tabler-icons/fesm2022/ng-icons-tabler-icons.mjs",
       "file": "@ng-icons_tabler-icons.js",
-      "fileHash": "fa24ebb3",
+      "fileHash": "9d4e1ba4",
       "needsInterop": false
     }
   },

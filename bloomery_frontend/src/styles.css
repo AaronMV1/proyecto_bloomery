@@ -6,6 +6,11 @@ html {
     line-height: 1rem;
 }
 
+:root {
+    --bg-page: #ffffff;
+    --text-page: #063e09;
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -22,6 +27,28 @@ a, p, h1, h2, h3, h4, span {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-page);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    --bg-page: #141614;
+    --text-page: #ecf4e9;
+}
+
+body.dark-mode section,
+body.dark-mode main,
+body.dark-mode header,
+body.dark-mode footer {
+    color: var(--text-page);
+}
+
+body.dark-mode img {
+    filter: brightness(0.95);
 }
 
 

@@ -23,13 +23,14 @@
 
 </div>
 
+
 <div class="categorias" id="categorias" #categoriasContainer>
 
     <div class="bloque-titulo">
         <h3>Categorías</h3>
     </div>
 
-    <div class="">
+    <div class="categorias-opciones">
 
         @for (item of categorias; track $index; let i = $index) {
 
@@ -51,6 +52,7 @@
     </div>
 
 </div>
+
 
 <div class="container" id="productos" #productosContainer>
 
@@ -123,7 +125,8 @@
 
                 <div class="producto-botones">
 
-                    <a [href]="getWhatsAppUrl(producto.name)" target="_blank" rel="noopener noreferrer" class="producto-boton producto-consultar">
+                    <a [href]="getWhatsAppUrl(producto.name)" target="_blank" rel="noopener noreferrer"
+                        class="producto-boton producto-consultar">
                         <p>Consultar</p>
                     </a>
 
@@ -144,10 +147,64 @@
 </div>
 
 
+<section class="simulador" id="simulador-combinacion">
+
+    <div class="bloque-titulo">
+        <h3>Simulador de Combinación</h3>
+        <p>Elige una planta y una maceta para visualizar cómo quedaría el conjunto.</p>
+    </div>
+
+    <div class="simulador-contenido">
+
+        <div class="simulador-controles">
+
+            <div class="simulador-control">
+                <label for="plantaSelect">Planta</label>
+                <select id="plantaSelect" [value]="selectedPlantaIndex()" (change)="onPlantaSelect($event)">
+                    @for (planta of plantasSimulador; track $index; let i = $index) {
+                    <option [value]="i">{{ planta.name }}</option>
+                    }
+                </select>
+            </div>
+
+            <div class="simulador-control">
+                <label for="macetaSelect">Maceta</label>
+                <select id="macetaSelect" [value]="selectedMacetaIndex()" (change)="onMacetaSelect($event)">
+                    @for (maceta of macetasSimulador; track $index; let i = $index) {
+                    <option [value]="i">{{ maceta.name }}</option>
+                    }
+                </select>
+            </div>
+
+        </div>
+
+        <div class="simulador-preview">
+
+            <div class="simulador-lienzo">
+
+                @if (selectedPlanta(); as planta) {
+                <img class="simulador-planta" [src]="planta.imageUrl" [alt]="planta.name" />
+                }
+
+                <img class="simulador-maceta" [src]="selectedMaceta().imageUrl" [alt]="selectedMaceta().name" />
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <div class="pop-up">
 
 
 </div>
+
+<button class="btn-modo-noche" type="button" (click)="toggleDarkMode()" [attr.aria-pressed]="isDarkMode()">
+    {{ isDarkMode() ? 'DIA' : 'NOCHE' }}
+</button>
 
 <div class="btn-regresar">
     <p (click)="scrollToTop()">▲</p>
