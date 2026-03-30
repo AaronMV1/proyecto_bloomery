@@ -19,6 +19,11 @@ a, p, h1, h2, h3, h4, span {
     letter-spacing: 1px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 @font-face {
     font-family: 'Saturnia Light';
@@ -35,7 +40,11 @@ a, p, h1, h2, h3, h4, span {
 }
 
 
-
+.content {
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+}
 
 /*
 body {
@@ -44,3 +53,4 @@ body {
     color: rgb(0, 99, 5);
 }
 */
+

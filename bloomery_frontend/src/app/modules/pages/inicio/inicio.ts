@@ -27,11 +27,6 @@ export class Inicio implements OnInit, OnDestroy {
     autoPlayInterval = 4000;
 
 
-    @ViewChild('productosContainer')
-    private productosContainer?: ElementRef<HTMLElement>;
-
-
-
     ngOnInit(): void {
         this.startAuto();
     }
@@ -39,6 +34,15 @@ export class Inicio implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.stopAuto();
     }
+
+
+
+    // @ViewChild('productosContainer')
+    // private productosContainer?: ElementRef<HTMLElement>;
+
+
+    @ViewChild('categoriasContainer')
+    private categoriasContainer?: ElementRef<HTMLElement>;
 
 
     //  #region      CATEGORIAS         
@@ -53,7 +57,7 @@ export class Inicio implements OnInit, OnDestroy {
         this.selectedCategoriaIndex.set(index);
 
         // Scroll hacia productos
-        this.productosContainer?.nativeElement.scrollIntoView({
+        this.categoriasContainer?.nativeElement.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
@@ -100,6 +104,30 @@ export class Inicio implements OnInit, OnDestroy {
 
 
     // #endregion
+
+
+    //  #region      WHATSAPP
+
+
+    whatsappNumber = '51933216749';
+    whatsappMessage = 'Hola! Estoy interesado(a) en el producto ';
+
+
+    getWhatsAppUrl(productName: string): string {
+        const message = encodeURIComponent(`${this.whatsappMessage}${productName}`);
+        return `https://wa.me/${this.whatsappNumber}?text=${message}`;
+    }
+
+
+    //  #endregion
+
+
+    scrollToTop(): void {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 
 
 }

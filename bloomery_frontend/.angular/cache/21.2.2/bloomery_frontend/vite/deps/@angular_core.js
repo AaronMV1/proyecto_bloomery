@@ -502,7 +502,8 @@ import {
   ɵɵvalidateAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-IVPOAMKY.js";
+} from "./chunk-W6O2UOO4.js";
+import "./chunk-GOMI4DH3.js";
 export {
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,

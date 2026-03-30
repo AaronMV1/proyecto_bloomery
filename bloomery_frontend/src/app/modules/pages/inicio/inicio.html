@@ -1,3 +1,5 @@
+
+
 <div class="banner">
 
     <div class="slider-track" [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'">
@@ -21,8 +23,7 @@
 
 </div>
 
-
-<div class="categorias">
+<div class="categorias" id="categorias" #categoriasContainer>
 
     <div class="bloque-titulo">
         <h3>Categorías</h3>
@@ -50,7 +51,6 @@
     </div>
 
 </div>
-
 
 <div class="container" id="productos" #productosContainer>
 
@@ -123,7 +123,7 @@
 
                 <div class="producto-botones">
 
-                    <a class="producto-boton producto-consultar">
+                    <a [href]="getWhatsAppUrl(producto.name)" target="_blank" rel="noopener noreferrer" class="producto-boton producto-consultar">
                         <p>Consultar</p>
                     </a>
 
@@ -141,4 +141,14 @@
 
     </div>
 
+</div>
+
+
+<div class="pop-up">
+
+
+</div>
+
+<div class="btn-regresar">
+    <p (click)="scrollToTop()">▲</p>
 </div>

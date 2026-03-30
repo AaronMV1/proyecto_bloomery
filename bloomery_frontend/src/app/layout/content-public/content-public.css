@@ -1,9 +1,20 @@
 
+app-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+}
+
 .routes {
+    position: relative;
+    z-index: 0;
     width: 100%;
     max-width: 120rem;
     margin: 0 auto;
-    padding-top: 5rem;
+    padding-top: 14rem;
 }
 
 @media (max-width: 768px) {
