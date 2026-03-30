@@ -7,11 +7,14 @@ import { Categorias } from '../../../data/categorias';
 
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild, computed, signal } from '@angular/core';
+import { NgIconsModule, provideIcons } from '@ng-icons/core';
+import { tablerArrowBigUp, tablerBrandFacebook, tablerCircleArrowUp, tablerMoon, tablerSun } from '@ng-icons/tabler-icons';
 
 
 @Component({
     selector: 'app-inicio',
-    imports: [CommonModule],
+    imports: [CommonModule, NgIconsModule],
+    viewProviders: [provideIcons({ tablerSun, tablerMoon, tablerCircleArrowUp })],
     templateUrl: './inicio.html',
     styleUrl: './inicio.css',
 })

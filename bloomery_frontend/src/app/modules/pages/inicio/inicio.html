@@ -202,10 +202,20 @@
 
 </div>
 
-<button class="btn-modo-noche" type="button" (click)="toggleDarkMode()" [attr.aria-pressed]="isDarkMode()">
-    {{ isDarkMode() ? 'DIA' : 'NOCHE' }}
+<button
+    class="btn-modo-noche"
+    type="button"
+    (click)="toggleDarkMode()"
+    [attr.aria-pressed]="isDarkMode()"
+    [attr.aria-label]="isDarkMode() ? 'Cambiar a modo dia' : 'Cambiar a modo noche'"
+>
+    @if (isDarkMode()) {
+      <ng-icon name="tablerSun" class="tabler-icon" aria-hidden="true"></ng-icon>
+    } @else {
+      <ng-icon name="tablerMoon" class="tabler-icon" aria-hidden="true"></ng-icon>
+    }
 </button>
 
-<div class="btn-regresar">
-    <p (click)="scrollToTop()">▲</p>
+<div class="btn-regresar" (click)="scrollToTop()">
+  <ng-icon name="tablerCircleArrowUp" class="tabler-icon" aria-hidden="true" size="25"></ng-icon>
 </div>
