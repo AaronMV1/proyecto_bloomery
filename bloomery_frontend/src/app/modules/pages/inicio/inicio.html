@@ -1,5 +1,3 @@
-
-
 <div class="banner">
 
     <div class="slider-track" [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'">
@@ -40,14 +38,6 @@
         </div>
 
         }
-
-        <!-- @for (item of categorias; track $index; let i = $index) {
-            <div class="categoria" [class.active]="i === selectedCategoriaIndex()" (click)="onCategoriaClick(i)">
-                <div class="portada" [style.background-image]="'url(' + item.imageUrl + ')'"> </div>
-                <h3>{{item.name}}</h3>
-                <p>Ver categoría</p>
-            </div>
-        } -->
 
     </div>
 
@@ -96,8 +86,8 @@
                 <div class="producto-riego">
 
                     @for (item of [].constructor(producto.wateringLevel); track $index) {
-                    <span class="gota"></span>
-                    <!-- <span class="gota">💧</span> -->
+                    <!-- <span class="gota"></span> -->
+                    <ng-icon name="tablerDropletFill" aria-hidden="true" size="15" color="#0084ff"></ng-icon>
                     }
 
                 </div>
@@ -159,21 +149,27 @@
         <div class="simulador-controles">
 
             <div class="simulador-control">
+
                 <label for="plantaSelect">Planta</label>
+
                 <select id="plantaSelect" [value]="selectedPlantaIndex()" (change)="onPlantaSelect($event)">
                     @for (planta of plantasSimulador; track $index; let i = $index) {
                     <option [value]="i">{{ planta.name }}</option>
                     }
                 </select>
+
             </div>
 
             <div class="simulador-control">
+
                 <label for="macetaSelect">Maceta</label>
+
                 <select id="macetaSelect" [value]="selectedMacetaIndex()" (change)="onMacetaSelect($event)">
                     @for (maceta of macetasSimulador; track $index; let i = $index) {
                     <option [value]="i">{{ maceta.name }}</option>
                     }
                 </select>
+                
             </div>
 
         </div>
@@ -204,19 +200,14 @@
 
 
 <div class="boton-flotante boton-flotante_regresar" (click)="scrollToTop()">
-  <ng-icon name="tablerCircleArrowUp" class="tabler-icon" aria-hidden="true" size="25"></ng-icon>
+    <ng-icon name="tablerCircleArrowUp" class="tabler-icon" aria-hidden="true" size="25"></ng-icon>
 </div>
 
-<div class="boton-flotante boton-flotante_modo-noche"
-    (click)="toggleDarkMode()"
-    [attr.aria-pressed]="isDarkMode()"
-    [attr.aria-label]="isDarkMode() ? 'Cambiar a modo dia' : 'Cambiar a modo noche'"
->
+
+<div class="boton-flotante boton-flotante_modo-noche" (click)="toggleDarkMode()" [attr.aria-pressed]="isDarkMode()" [attr.aria-label]="isDarkMode() ? 'Cambiar a modo dia' : 'Cambiar a modo noche'">
     @if (isDarkMode()) {
-      <ng-icon name="tablerSun" class="tabler-icon" aria-hidden="true" size="25"></ng-icon>
+        <ng-icon name="tablerSun" class="tabler-icon" aria-hidden="true" size="25"></ng-icon>
     } @else {
-      <ng-icon name="tablerMoon" class="tabler-icon" aria-hidden="true" size="25"></ng-icon>
+        <ng-icon name="tablerMoon" class="tabler-icon" aria-hidden="true" size="25"></ng-icon>
     }
 </div>
-
-

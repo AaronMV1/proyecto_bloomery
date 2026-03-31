@@ -17,7 +17,7 @@ html {
     box-sizing: border-box;
 }
 
-a, p, h1, h2, h3, h4, span {
+a, p, h1, h2, h3, h4, span, label {
     margin: 0;
     padding: 0;
     font-family: 'Saturnia Regular';

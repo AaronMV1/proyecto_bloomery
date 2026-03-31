@@ -8,13 +8,14 @@ import { Categorias } from '../../../data/categorias';
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild, computed, signal } from '@angular/core';
 import { NgIconsModule, provideIcons } from '@ng-icons/core';
-import { tablerCircleArrowUp, tablerMoon, tablerSun } from '@ng-icons/tabler-icons';
+import { tablerCircleArrowUp, tablerDroplet, tablerMoon, tablerSun } from '@ng-icons/tabler-icons';
+import { tablerDropletFill } from '@ng-icons/tabler-icons/fill';
 
 
 @Component({
     selector: 'app-inicio',
     imports: [CommonModule, NgIconsModule],
-    viewProviders: [provideIcons({ tablerSun, tablerMoon, tablerCircleArrowUp })],
+    viewProviders: [provideIcons({ tablerSun, tablerMoon, tablerCircleArrowUp, tablerDropletFill })],
     templateUrl: './inicio.html',
     styleUrl: './inicio.css',
 })
@@ -30,6 +31,7 @@ export class Inicio implements OnInit, OnDestroy {
     precio: boolean = true;
     autoPlayInterval = 4000;
     isDarkMode = signal(false);
+
 
     private readonly darkModeStorageKey = 'bloomery-dark-mode';
 

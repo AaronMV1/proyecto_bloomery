@@ -1,43 +1,49 @@
 {
-  "hash": "d72de028",
-  "configHash": "c9ed3d21",
+  "hash": "8883fb3d",
+  "configHash": "472e1e4e",
   "lockfileHash": "f969db15",
-  "browserHash": "5279b643",
+  "browserHash": "58de9242",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "e9612db3",
+      "fileHash": "85b373d6",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "e7d12eb1",
+      "fileHash": "7a38326e",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "07bd4871",
+      "fileHash": "c83a18d3",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "3ca2524c",
+      "fileHash": "4a1d226a",
       "needsInterop": false
     },
     "@ng-icons/core": {
       "src": "../../../../../../node_modules/@ng-icons/core/fesm2022/ng-icons-core.mjs",
       "file": "@ng-icons_core.js",
-      "fileHash": "c52696f7",
+      "fileHash": "44d17233",
       "needsInterop": false
     },
     "@ng-icons/tabler-icons": {
       "src": "../../../../../../node_modules/@ng-icons/tabler-icons/fesm2022/ng-icons-tabler-icons.mjs",
       "file": "@ng-icons_tabler-icons.js",
-      "fileHash": "9d4e1ba4",
+      "fileHash": "d6431eaa",
+      "needsInterop": false
+    },
+    "@ng-icons/tabler-icons/fill": {
+      "src": "../../../../../../node_modules/@ng-icons/tabler-icons/fesm2022/ng-icons-tabler-icons-fill.mjs",
+      "file": "@ng-icons_tabler-icons_fill.js",
+      "fileHash": "af062677",
       "needsInterop": false
     }
   },
