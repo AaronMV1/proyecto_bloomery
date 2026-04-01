@@ -290,11 +290,12 @@
     border-radius: 3rem;
 }
 
-@media (max-width: 1220px) {
+@media (max-width: 1360px) {
     .banner {
         border-radius: 0rem;
+        margin-top: 40rem;
     }
-}
+}       
 
 /* track que contiene todos los slides en fila */
 .slider-track {
